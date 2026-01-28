@@ -31,7 +31,7 @@ hit_ground.direction = -1
 def range_for_angle(alpha):
     vx0 = v0 * np.cos(alpha)
     vy0 = v0 * np.sin(alpha)
-    y0 = [0, 0, vx0, vy0]
+    y0 = [0, y_0, vx0, vy0]
     sol = spi.solve_ivp(projectile, t_span=(0, 10),y0 = y0, events=hit_ground, max_step=0.05)
     return sol.y[0, -1]  # final x position
 
