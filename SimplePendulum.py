@@ -7,7 +7,7 @@ length = float(input("Enter the effective length of pendulum: "))
 g = 9.81
 omega = np.sqrt(g/length)
 dt = 0.01
-steps = int(input("Enter the number of time steps: "))*100
+steps = int(input("Enter the number of time steps: "))
 
 # Arrays
 x = np.zeros(steps)
@@ -52,7 +52,7 @@ def update(frame):
     return pendulum, 
 
 # Animation,
-ani = FuncAnimation(fig, update, frames=steps, interval=30, blit=False, init_func=init)
+ani = FuncAnimation(fig, update, frames=steps, interval=30, blit=True, init_func=init)
 plt.show()
 
 #Plot of position vs time graph
@@ -62,3 +62,4 @@ plt.xlabel("Time (s)")
 plt.ylabel("Angular Position (radians)")
 plt.title("Angular Position vs Time Graph for Simple Pendulum")
 plt.show()
+
